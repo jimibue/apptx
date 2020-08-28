@@ -51,6 +51,7 @@
             <div class="content">
               <div class="header"><%= patient.name%></div>
               <%= patient.condition%>
+              <%= link_to 'View', patient_path(patient)%>
             </div>
           </div>
         <% end%>

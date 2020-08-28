@@ -1,0 +1,55 @@
+<h1>Appointments#new</h1>
+<div class="ui grid">
+  <div class="four wide column">
+    <div class="ui card">
+      <div class="image">
+        <img src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_female_woman_avatar-512.png">
+      </div>
+      <div class="content">
+        <a class="header"><%= @patient.name %></a>
+        <div class="meta">
+          <span class="date">Joined in 2013</span>
+        </div>
+        <div class="description">
+          <%= @patient.condition %>
+        </div>
+      </div>
+      <div class="extra content">
+        <a>
+          <i class="user icon"></i>
+          current scheduled appointments: <%= @patient.appointments.length%>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="four wide column">
+    <div class="ui card">
+      <div class="image">
+        <img src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_female_woman_avatar-512.png">
+      </div>
+      <div class="content">
+        <a class="header"><%= @doctor.name %></a>
+        <div class="meta">
+          <span class="date">Joined in 2013</span>
+        </div>
+        <div class="description">
+          <%= @doctor.specialty %>
+        </div>
+      </div>
+      <div class="extra content">
+        <a>
+          <i class="user icon"></i>
+          current scheduled appointments: <%= @doctor.appointments.length%>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="eight wide column">
+    input here
+    <%= form_with(model: [@patient, @doctor], method: :post) do |f| %>
+      <%= f.label :date%>
+      <%= f.text_field :date, required: true %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

@@ -1,2 +1,46 @@
-<h1>Patients#show</h1>
-<p>Find me in app/views/patients/show.html.erb</p>
+<h1>Patient Info</h1>
+<%= link_to "Back", root_path %>
+<div class="ui card">
+  <div class="image">
+    <img src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_female_woman_avatar-512.png">
+  </div>
+  <div class="content">
+    <a class="header"><%= @patient.name %></a>
+    <div class="meta">
+      <span class="date">Joined in 2013</span>
+    </div>
+    <div class="description">
+      <%= @patient.condition %>
+    </div>
+  </div>
+  <div class="extra content">
+    <a>
+      <i class="user icon"></i>
+      current scheduled appointments: <%= @patient.appointments.length%>
+    </a>
+  </div>
+</div>
+<h1>Doctors who treat <%= @patient.condition %></h1>
+<div class="ui middle aligned selection list">
+  <% @doctors.each do |doctor|%>
+    <div class="item">
+      <img class="ui avatar image" src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_female_woman_avatar-512.png">
+      <div class="content">
+        <div class="header">
+          <%= doctor.name%>
+          <%= link_to 'schedule appt', new_appointment_path(@patient, doctor)%>
+        </div>
+        <%= doctor.specialty%>
+        <br />
+        <%= doctor.treatment%>
+      </div>
+    </div>
+  <% end%>
+</div>
+<h1>schedule appointments</h1>
+<% @patient.appointments.each do |apt| %>
+  <div>
+    <p>Doctor: <%= apt.doctor.name %></p>
+    <p>Date: <%= apt.date %></p>
+  </div>
+<%end%>
