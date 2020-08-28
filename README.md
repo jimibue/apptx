@@ -1,24 +1,11 @@
-# README
+# What things could we do?
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. patient page that would show doctors that match condition make appt
+2. doctors history page (would want to update seeds file)
+3. a page to select condition and see doctors
+4. patient could enter symptoms (condition)
 
-Things you may want to cover:
+- patent has many conditions (symptoms) require change db
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+5. patients has appt appt time passes gets new condition
+6. public health announcement fact list patient count with conditions

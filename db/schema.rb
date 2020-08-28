@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2020_08_28_163312) do
 
   create_table "doctors", force: :cascade do |t|
     t.string "name"
-    t.string "type"
-    t.string "insurance"
+    t.string "treatment"
+    t.string "specialty"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
